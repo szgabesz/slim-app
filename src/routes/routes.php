@@ -5,9 +5,12 @@ use \Psr\Http\Message\ResponseInterface as Response;
 // $app->get('/hello', 'UsersController:index');
 // $app->get('/get', 'UsersController:getall');
 
-$app->get('/hello', function (Request $request, Response $response) {
+$app->get('/users', function (Request $request, Response $response) {
     return $response->getBody()->write(Users::all()->toJson());
-    // echo "hello";
+});
+
+$app->get('/users/{id}', function (Request $request, Response $response, $args) { 
+    return $response->getBody()->write(Users::find($args['id'])->toJson());
 });
  
 ?>

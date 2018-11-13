@@ -1,7 +1,7 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
-require  __DIR__ . '/../models/Users.php';  
-require  __DIR__ . '/../handlers/exception.php';
+require_once(__DIR__ . '/../vendor/autoload.php');
+require_once(__DIR__ . '/../models/Users.php');  
+require_once(__DIR__ . '/../handlers/exception.php');
 
 // Instantiate the app
 $app = new \Slim\App(['settings' => require __DIR__ . '/../config/settings.php']);
@@ -28,11 +28,6 @@ $container['logger'] = function($container) {
     return $logger;
 };
 
-// $app->get('/hello', function (Request $request, Response $response, array $args) {
-//     return $response->getBody()->write(Users::all()->toJson());
-// });
-
-// require_once('../routes.php');
-require  __DIR__ . '/../routes.php';
+require_once(__DIR__ . '/../routes/routes.php');
 
 $app->run();
