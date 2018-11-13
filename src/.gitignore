@@ -1,6 +1,6 @@
 /vendor
 /cache
-/logs
+/public/logs
 /assets/lib
 /db
 .DS_STORE
