@@ -6,7 +6,7 @@ return [
     'db' => [
         'driver' => 'mysql',
         'host' => 'localhost',
-        'database' => 'exampleapp',
+        'database' => 'slim-app',
         'username' => 'root',
         'password' => '',
         'charset'   => 'utf8',
